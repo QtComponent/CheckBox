@@ -15,14 +15,14 @@ Item {
         implicitWidth: 20
         implicitHeight: 20
         radius: 3
-        border.color: root.down ? "#17a81a" : "#21be2b"
+        border.color: "gray"
         y: (root.height - height)/2
 
         Rectangle {
             anchors.centerIn: parent
             width: 10; height: 10
             radius: 2
-            color: root.down ? "#17a81a" : "#21be2b"
+            color: "gray"
             visible: root.checked
         }
     }
@@ -30,7 +30,7 @@ Item {
     property Component contentItem : Text {
         height: root.height
         text: "text"
-        color: root.down ? "#17a81a" : "#21be2b"
+        color: root.down ? "black" : "black"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         x: 25
@@ -38,7 +38,7 @@ Item {
 
     property Component background : Rectangle {
         width: 60; height: 20
-        color: "lightblue"
+        color: "#00000000"
     }
 
     Loader {
