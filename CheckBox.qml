@@ -3,8 +3,8 @@ import QtQuick 2.0
 Item {
     id: root
 
-    implicitWidth: indicatorId.width + contentItemId.item.x
-    implicitHeight: indicatorId.height + contentItemId.item.y
+    implicitWidth: backgroundId.item.width
+    implicitHeight: backgroundId.item.height
 
     property string text: ""
     property bool  checked: false
@@ -12,16 +12,15 @@ Item {
     property bool down: false
 
     property Component indicator : Rectangle {
-        implicitWidth: 26
-        implicitHeight: 26
+        implicitWidth: 20
+        implicitHeight: 20
         radius: 3
         border.color: root.down ? "#17a81a" : "#21be2b"
+        y: (root.height - height)/2
 
         Rectangle {
-            width: 14
-            height: 14
-            x: 6
-            y: 6
+            anchors.centerIn: parent
+            width: 10; height: 10
             radius: 2
             color: root.down ? "#17a81a" : "#21be2b"
             visible: root.checked
@@ -34,7 +33,17 @@ Item {
         color: root.down ? "#17a81a" : "#21be2b"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        x: 26 + 3
+        x: 25
+    }
+
+    property Component background : Rectangle {
+        width: 60; height: 20
+        color: "lightblue"
+    }
+
+    Loader {
+        id: backgroundId
+        sourceComponent: background
     }
 
     Loader {
