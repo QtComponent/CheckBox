@@ -6,7 +6,7 @@ Item {
     implicitWidth: backgroundId.item.width
     implicitHeight: backgroundId.item.height
 
-    property string text: ""
+    property string text: "text"
     property bool  checked: false
     property bool pressed: false
     property bool down: false
@@ -29,7 +29,7 @@ Item {
 
     property Component contentItem : Text {
         height: root.height
-        text: "text"
+        text: root.text
         color: root.down ? "black" : "black"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter

@@ -10,8 +10,29 @@ Rectangle {
         spacing: 10
 
         /* Default */
-        My.CheckBox {
-            text: "默认样式"
+        Repeater {
+            model: 3
+
+            My.CheckBox {
+                id: checkBox
+                text: "默认样式"
+
+                indicator : Rectangle {
+                    implicitWidth: 20
+                    implicitHeight: 20
+                    radius: 3
+                    border.color: "gray"
+                    y: (checkBox.height - height)/2
+
+                    Rectangle {
+                        anchors.centerIn: parent
+                        width: 10; height: 10
+                        radius: 2
+                        color: "gray"
+                        visible: checkBox.checked
+                    }
+                }
+            }
         }
 
         My.CheckBox {
