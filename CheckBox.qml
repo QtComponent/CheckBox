@@ -6,10 +6,10 @@ Item {
     implicitWidth: backgroundId.item.width
     implicitHeight: backgroundId.item.height
 
-    property string text: "text"
     property bool  checked: false
-    property bool pressed: false
     property bool down: false
+    property bool pressed: false
+    property string text: "text"
 
     property Component indicator : Rectangle {
         implicitWidth: 20
